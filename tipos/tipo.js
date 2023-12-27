@@ -65,3 +65,113 @@ function multiplier(numA, numB) {
 }
 //console.log(multiplier(3,'halley'))
 console.log(multiplier(3.2, 2));
+// two different ways to define a function
+const test = function (x, y) { return x * y; };
+function testing(x, y) { return x * y; }
+console.log(test(1.2, 5));
+console.log(testing(3, 9.7));
+// type function. Another way to define a function. Using arrow sintax:
+let calculus;
+//calculus = returnOi
+//calculus()
+calculus = multiplier;
+console.log(calculus(5.7, 6));
+// Challenge
+/*
+    create an object named employee with:
+        - Array of strings with the name of the supervisors
+        - function check-in that receives the exact hour the employee checked-in (number)
+            and return a string
+            -> normal check-in hour (<= 8)
+            -> late (> 8)
+*/
+let employee = {
+    supervisors: ['Ana', 'Fernando'],
+    checkIn(horario) {
+        if (horario <= 8) {
+            return 'OK';
+        }
+        else {
+            return 'late!';
+        }
+    }
+};
+console.log(employee.supervisors);
+console.log(employee.checkIn(8));
+console.log(employee.checkIn(9));
+let employee2 = {
+    supervisors: ['Diana', 'clark'],
+    checkIn(horario) {
+        if (horario <= 8) {
+            return 'OK';
+        }
+        else {
+            return 'late!';
+        }
+    }
+};
+console.log(employee2.supervisors);
+console.log(employee2.checkIn(8));
+console.log(employee2.checkIn(9));
+let employee3 = {
+    supervisors: ['Bruce', 'Shayera'],
+    checkIn(horario) {
+        if (horario <= 8) {
+            return 'OK';
+        }
+        else {
+            return 'late!';
+        }
+    }
+};
+console.log(employee3.supervisors);
+console.log(employee3.checkIn(8));
+console.log(employee3.checkIn(9));
+// Union Types
+let bill = 10;
+console.log(`my bill is ${bill}!`);
+bill = '10';
+console.log(`my bill is ${bill}!`);
+// nota = true
+// never
+function error(msg) {
+    throw new Error(msg);
+}
+const product = {
+    name: 'oil',
+    price: 1,
+    validateProduct() {
+        if (!this.name || this.name.trim().length == 0) {
+            error('a name is required!');
+        }
+        if (this.price <= 0) {
+            error('invalid price!');
+        }
+        else {
+            console.log('OK');
+        }
+    }
+};
+product.validateProduct();
+let optionalHeight = 12;
+optionalHeight = null;
+const contact1 = {
+    name: 'gistiond',
+    tel2: null,
+    tel1: '23456783'
+};
+console.log(contact1.name);
+console.log(contact1.tel2, contact1.tel1);
+let bankAccount = {
+    balance: 3456,
+    depositate(value) {
+        this.balance += value;
+    }
+};
+let accountHolder = {
+    name: 'Ana Silva',
+    bankAccount: bankAccount,
+    contacts: ['34567890', '98765432']
+};
+accountHolder.bankAccount.depositate(3000);
+console.log(accountHolder);
