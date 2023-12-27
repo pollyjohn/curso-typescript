@@ -175,3 +175,4 @@ let accountHolder = {
 };
 accountHolder.bankAccount.depositate(3000);
 console.log(accountHolder);
+//# sourceMappingURL=tipo.js.map
